@@ -3,5 +3,4 @@ class Plan < ApplicationRecord
   validates :date, presence: true
 
   has_many :plans
-  belongs to :date
 end
