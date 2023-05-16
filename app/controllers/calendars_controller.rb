@@ -36,16 +36,19 @@ class CalendarsController < ApplicationController
       end
 
 #       曜日を追加したい
-# 配列を使って表示したい
+# 配列を使って表示したい（if文）
 # 添字を使って表示する。
 # Date.today.wday という自動的に曜日の数値を取得する　＋加算したい
 # X＝　はtimesメソッドのブロック変数｜x｜
+# wday_numは、曜日の添字を抽出する式
 
 
 
        wday_num = Date.today.wday + x
+       # wdayメソッドを用いて取得した数値
       if wday_num >= 7
         wday_num = wday_num -7
+        # もしwday_numが７より大きい場合、−７をするという条件式
        end
       days = { month: (@todays_date + x).month, date: (@todays_date + x).day, plans: today_plans, wday: wdays[wday_num]}
       @week_days.push(days)
